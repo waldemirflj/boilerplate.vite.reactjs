@@ -1,5 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { MdLogout } from "react-icons/md";
 
 // contexts
 import { AuthContext } from "../../contexts/auth";
@@ -26,7 +28,9 @@ function Index() {
           <Link to="/admin/products">products</Link>
         </li>
         <li style={{ padding: 5 }}>
-          <button onClick={logout}>logout</button>
+          <Button variant="primary" onClick={logout}>
+            <MdLogout /> logout
+          </Button>
         </li>
       </ul>
 

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 // contexts
 import { AuthContext } from "../../../contexts/auth";
@@ -19,7 +20,9 @@ function Index() {
 
       <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
         <li style={{ padding: 5 }}>
-          <button onClick={handleLogin}>login</button>
+          <Button variant="primary" onClick={handleLogin}>
+            login
+          </Button>
         </li>
       </ul>
     </div>
