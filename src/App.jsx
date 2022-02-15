@@ -1,8 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-// contexts
-import Auth from "./contexts/auth";
-
 // pages
 import Logged from "./pages/logged";
 import Unlogged from "./pages/unlogged";
@@ -10,9 +7,12 @@ import Unlogged from "./pages/unlogged";
 // shared
 import PrivateRoute from "./shared/PrivateRoute";
 
+// contexts
+import AuthProvider from "./contexts/AuthProvider";
+
 function App() {
   return (
-    <Auth>
+    <AuthProvider>
       <Routes>
         <Route path="/*" element={<Unlogged />} />
 
@@ -25,7 +25,7 @@ function App() {
           }
         />
       </Routes>
-    </Auth>
+    </AuthProvider>
   );
 }
 

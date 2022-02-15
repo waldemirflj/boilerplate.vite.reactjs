@@ -1,5 +1,5 @@
 {
-  "name": "projeto.euaviso-admin",
+  "name": "reactjs.boilerplate",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -8,12 +8,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "5.1.3",
+    "formik": "^2.2.9",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.1.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
+    "sass": "^1.49.7",
     "vite": "^2.8.0"
   }
 }
