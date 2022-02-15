@@ -9,12 +9,12 @@ export default function Auth({ children }) {
     setIsAuthenticated(true);
   };
 
-  const signUp = async () => {
-    setIsAuthenticated(true);
-  };
-
   const logout = async () => {
     setIsAuthenticated(false);
+  };
+
+  const signUp = async () => {
+    setIsAuthenticated(true);
   };
 
   return (
