@@ -1,46 +1,27 @@
-import { useContext, useEffect } from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import { MdLogout } from "react-icons/md";
+import { Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
-// contexts
-import { AuthContext } from "../../contexts/auth";
+// shared
+import Layout from "../../shared/LoggedPage";
+import SubNavbar from "../../shared/SubNavbar";
 
 import Home from "./home";
 import Products from "./products";
+import Perfil from "./perfil";
 
 function Index() {
-  const { logout } = useContext(AuthContext);
-
-  useEffect(() => {
-    console.log("logged...");
-  }, []);
-
   return (
-    <div>
-      <h1>it's unlogged</h1>
+    <Layout>
+      <SubNavbar />
 
-      <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-        <li style={{ padding: 5 }}>
-          <Link to="/admin">home</Link>
-        </li>
-        <li style={{ padding: 5 }}>
-          <Link to="/admin/products">products</Link>
-        </li>
-        <li style={{ padding: 5 }}>
-          <Button variant="primary" onClick={logout}>
-            <MdLogout /> logout
-          </Button>
-        </li>
-      </ul>
-
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/products" element={<Products />} />
-      </Routes>
-
-      <Outlet />
-    </div>
+      <Container className="p-3">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/perfil" element={<Perfil />} />
+        </Routes>
+      </Container>
+    </Layout>
   );
 }
 
